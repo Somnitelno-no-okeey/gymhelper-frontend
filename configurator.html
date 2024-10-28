@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gymhelper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+      <nav>
+        <a href="/">
+            <img src="img/logo.svg" alt="">
+          </a>
+          <ul class="site-navigation">
+            <li>
+                <a href="/">Программы</a>
+            </li>
+            <li>
+                <a href="/">О нас</a>
+            </li>
+            <li>
+                <a href="/">Профиль</a>
+            </li>
+          </ul>  
+      </nav>
+    </header>
+    <main>
+        <form action="" method="post" class="configurator-form">
+            <div class="form-settings type-programm">
+                <h1>ВИД ПРОГРАММЫ</h1>
+                <div class="cards-container">
+                    <label class="choice-card">
+                        <input type="radio" name="type-programm" value="full-body">
+                        <p>FULL BODY</p>
+                        <button>Подробнее</button>
+                    </label>
+                    <label class="choice-card">
+                        <input type="radio" name="type-programm" value="split">
+                        <p>SPLIT</p>
+                        <button>Подробнее</button>
+                    </label>
+                </div>
+            </div>
+            <div class="form-settings difficulty-level">
+                <h1>УРОВЕНЬ СЛОЖНОСТИ ПРОГРАММЫ</h1>
+                <div class="cards-container">
+                    <label class="choice-card">
+                        <input type="radio" name="difficulty-level" value="lite">
+                        <p>НАЧАЛЬНЫЙ</p>
+                    </label>
+                    <label class="choice-card">
+                        <input type="radio" name="difficulty-level" value="medium">
+                        <p>СРЕДНИЙ</p>
+                    </label>
+                    <label class="choice-card">
+                        <input type="radio" name="difficulty-level" value="hard">
+                        <p>ВЫСОКИЙ</p>
+                    </label>
+                </div>
+            </div>
+            <div class="form-settings train-count">
+                <h1>КОЛИЧЕСТВО ТРЕНИРОВОК В НЕДЕЛЮ</h1>
+                <label>
+                    <button type = "button" onclick="decrement()">-</button>
+                    <p class="counter-output">0</p>
+                    <input class="counter" type="number" name="train-count" value="0" readonly>
+                    <button type = "button" onclick="increment()">+</button>
+                </label>
+                <button type="submit">ПРИНЯТЬ</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/counter.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

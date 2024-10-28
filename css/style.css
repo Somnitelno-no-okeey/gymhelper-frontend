@@ -1,0 +1,212 @@
+/* styles for all body */
+:root {
+    --color-bg: #1A1B17;
+    --color-main: #C8FC01;
+    --color-main-text: #D0D7D1;
+    --color-secondary-text: #848484;
+    --color-third-text: rgba(255, 255, 255, 0.5);
+    --card-color-bg: linear-gradient(360deg, rgba(208, 215, 209, 0.1) 0%, rgba(208, 215, 209, 0) 64.07%);
+    --default-margin: 1.67rem;
+    --default-border-radius: 1.04rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 24px;
+}
+
+body, * {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    border:none;
+    background: none;
+    color: var(--color-main-text);
+    line-height: 0.945;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+img,a {
+    display: block;
+}
+
+body,html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-color: var(--color-bg);
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* styles for header */
+
+header nav {
+    display: flex;
+    width: 67.5rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    align-items: center;
+    margin-top: var(--default-margin);
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: var(--default-margin);
+    margin-left: auto;
+}
+
+header nav ul li a {
+    color: var(--color-secondary-text);
+    transition: all .4s;
+}
+
+header nav ul li a:hover,
+header nav ul li a:active {
+    color: var(--color-main-text);
+}
+
+/* styles for all main */
+
+main {
+    margin: 0 auto;
+    margin-top: calc(3 * var(--default-margin));
+    width: 67.5rem;
+}
+
+main h1 {
+    font-size: 2.67rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: calc(2 * var(--default-margin));
+}
+
+/* styles for main in configurator */
+
+.form-settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-settings .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--default-margin);
+    margin-bottom: var(--default-margin);
+}
+
+.form-settings .cards-container .choice-card {
+    display: flex;
+    flex-direction: column;
+    width: 15.6rem;
+    height: 18.9rem;
+    background: var(--card-color-bg);
+    border: 2px solid var(--color-main);
+    border-radius: var(--default-border-radius);
+    padding: calc(0.5 * var(--default-margin));
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.choice-card p {
+    text-align: center;
+    margin: auto 0;
+    font-weight: 700;
+    font-size: 2.67rem;
+    color: var(--color-main);
+    transition: all .4s;
+}
+
+.form-settings .cards-container .choice-card:hover {
+    border: 2px solid var(--color-main-text);
+}
+
+.form-settings .cards-container .choice-card:hover p {
+    color: var(--color-main-text);
+}
+
+.form-settings .cards-container .choice-card:has(input:checked) {
+    border: 2px solid var(--color-main-text);
+}
+
+.form-settings .cards-container .choice-card:has(input:checked) p {
+    color: var(--color-main-text);
+}
+
+.choice-card input {
+    display: none;
+}
+
+.choice-card button {
+    font-weight: 500;
+    color: var(--color-third-text);
+    margin-bottom: calc(0.125 * var(--default-margin));
+    transition: all .4s;
+}
+
+.choice-card button:hover,
+.choice-card button:active {
+    color: var(--color-main-text);
+}
+
+.form-settings.difficulty-level p {
+    font-size: 2rem;
+}
+
+.form-settings.train-count button[type = 'button'],
+.form-settings.train-count p {
+    font-size: 10.4rem;
+    font-weight: 700;
+}
+
+.form-settings.train-count input {
+    display: none;
+}
+
+.form-settings.train-count label {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: var(--default-margin);
+    gap: calc(2.5 * var(--default-margin));
+}
+
+.form-settings.train-count p {
+    color: var(--color-main);
+    width: 6.75rem;
+    text-align: center;
+}
+
+.form-settings button[type = 'submit'] {
+    width: 14.5rem;
+    height: 4.3rem;
+    font-weight: 700;
+    font-size: 2rem;
+    border-radius: calc(1.6 * var(--default-border-radius));
+    border: 9px solid var(--color-main);
+    margin: 0 auto;
+    transition: all .4s;
+}
+
+.form-settings button[type = 'submit']:hover {
+    border: 9px solid var(--color-main-text);
+}
