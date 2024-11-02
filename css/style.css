@@ -1,13 +1,17 @@
 /* styles for all body */
 :root {
-    --color-bg: #1A1B17;
-    --color-main: #C8FC01;
-    --color-main-text: #D0D7D1;
-    --color-secondary-text: #848484;
-    --color-third-text: rgba(255, 255, 255, 0.5);
-    --card-color-bg: linear-gradient(360deg, rgba(208, 215, 209, 0.1) 0%, rgba(208, 215, 209, 0) 64.07%);
+    --color-bg: #212121;
+    --color-bg-aside: linear-gradient(360deg, #272E35 0%, #333E3B 100%);
+    --color-bg-card: #373737;
+    --color-main: #D0F45D;
+    --color-second-main: #4A66E3;
+    --color-third-main: #40474A;
+    --color-main-text: #FFFFFF;
     --default-margin: 1.67rem;
     --default-border-radius: 1.04rem;
+    --color-default-step-btn: linear-gradient(90deg, rgba(115, 115, 115, 0.1) 0%, rgba(208, 215, 209, 0.1) 100%);
+    --color-hover-step-btn: linear-gradient(90deg, rgba(115, 115, 115, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+    --color-active-step-btn: linear-gradient(90deg, #737373 0%, #FFFFFF 100%);
 }
 
 html {
@@ -54,159 +58,260 @@ body {
     background-color: var(--color-bg);
 }
 
-main {
+.page-container {
     flex-grow: 1;
+}
+
+/* styles for aside */
+
+aside {
+    display: flex;
+    flex-direction: column;
+    margin-right: calc(3 * var(--default-margin));
+}
+
+aside  .logo {
+    position: relative;
+    z-index: 10;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-top: calc(0.325 * var(--default-margin));
+    margin-bottom: calc(1.425 * var(--default-margin));
+    text-align: center;
+}
+
+aside nav ul {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.17rem;
+    background: var(--color-bg-aside);
+    list-style-type: none;
+    border-radius: calc(1.6 * var(--default-border-radius));
+    gap: calc(1.2 * var(--default-margin));
+    box-shadow: 0px -303px 250px -7px var(--color-main);
+}
+
+aside nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.58rem;
+    height: 2.58rem;
+    border-radius: 50%;
+    background: var(--color-third-main);
+    transition: all .4s ease;
+}
+
+aside nav ul li a.active,
+aside nav ul li a:hover,
+aside .profile-nav-container .logout:hover {
+    background: var(--color-main);
+}
+
+aside nav ul li a.active svg path,
+aside nav ul li a:hover svg path,
+aside .profile-nav-container .logout:hover svg path {
+    fill: var(--color-third-main);
+}
+
+aside nav ul li a.active svg path.stroke,
+aside nav ul li a:hover svg path.stroke {
+    stroke: var(--color-third-main);
+    fill: none;
+}
+
+aside .profile-nav-container {
+    margin-top: calc(6.9 * var(--default-margin));
+    display: flex;
+    flex-direction: column;
+    padding: 0.17rem;
+    background: var(--color-bg-aside);
+    border-radius: calc(1.6 * var(--default-border-radius));
+    gap: calc(1.2 * var(--default-margin));
+}
+
+aside .profile-nav-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.58rem;
+    height: 2.58rem;
+    border-radius: 50%;
+    transition: all .4s ease;
+}
+
+aside .profile-nav-container .logout {
+    background: var(--color-third-main);    
+}
+
+aside .profile-nav-container .nav-profile {
+    background: var(--color-second-main);
 }
 
 /* styles for header */
 
-header nav {
+header {
     display: flex;
-    width: 67.5rem;
-    height: 2.5rem;
-    margin: 0 auto;
     align-items: center;
-    margin-top: var(--default-margin);
+    height: 2.5rem;
+    width: 63.33rem;
 }
 
-header nav ul {
-    display: flex;
-    list-style-type: none;
-    gap: var(--default-margin);
+header .page-name {
+    font-weight: 700;
+    font-size: 1.33rem;
+}
+
+header .premium {
     margin-left: auto;
-}
-
-header nav ul li a {
-    color: var(--color-secondary-text);
-    transition: all .4s;
-}
-
-header nav ul li a:hover,
-header nav ul li a:active {
-    color: var(--color-main-text);
+    font-size: 0.83rem;
+    width: 6.33rem;
+    height: 2.5rem;
+    background-color: var(--color-second-main);
+    border-radius: var(--default-border-radius);
+    box-shadow: 6px -19px 250px 42px var(--color-second-main);
 }
 
 /* styles for all main */
 
-main {
-    margin: 0 auto;
-    margin-top: calc(3 * var(--default-margin));
-    width: 67.5rem;
+.page-container {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--default-margin);
 }
 
-main h1 {
-    font-size: 2.67rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: calc(2 * var(--default-margin));
+main {
+    margin-top: calc(1.1 * var(--default-margin));
 }
 
 /* styles for main in configurator */
 
-.form-settings {
-    display: flex;
-    flex-direction: column;
+.configurator-form .step-title {
+    font-size: 1.33rem;
+    text-align: center;
+    margin-bottom: calc(0.8 * var(--default-margin));
+    transition: all .4s ease;
 }
 
-.form-settings .cards-container {
+.configurator-form .step-button-container {
+    display: flex;
+    gap: calc(0.25 * var(--default-margin));
+    margin-bottom: var(--default-margin);
+}
+
+.configurator-form .step-button-container button {
+    position: relative;
+    flex: 1;
+    height: 0.33rem;
+    border-radius: calc(0.08 * var(--default-border-radius));
+    background: var(--color-default-step-btn);
+    overflow: hidden;
+}
+
+.configurator-form .step-button-container button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-hover-step-btn);
+    opacity: 0; 
+    transition: opacity 0.4s ease; 
+    z-index: 0;
+}
+
+.configurator-form .step-button-container button:hover:not(.active)::before {
+    opacity: 1; 
+}
+
+.configurator-form .step-button-container button.active {
+    background: var(--color-active-step-btn);
+}
+
+.configurator-form .step-container {
+    display: none;
+    justify-content: center;
+    gap: calc(0.5 * var(--default-margin));
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+.configurator-form .step-container label {
     display: flex;
     justify-content: center;
-    gap: var(--default-margin);
-    margin-bottom: var(--default-margin);
-}
-
-.form-settings .cards-container .choice-card {
-    display: flex;
-    flex-direction: column;
-    width: 15.6rem;
-    height: 18.9rem;
-    background: var(--card-color-bg);
-    border: 2px solid var(--color-main);
+    align-items: center;
+    flex: 1;
+    height: 7.5rem;
     border-radius: var(--default-border-radius);
-    padding: calc(0.5 * var(--default-margin));
+    background-color: var(--color-bg-card);
+    transition: all .4s ease;
     cursor: pointer;
-    transition: all .4s;
 }
 
-.choice-card p {
-    text-align: center;
-    margin: auto 0;
+.configurator-form .step-container[data-stage = '4'] label {
+    height: 12.08rem;
+}
+
+.configurator-form .step-container[data-stage = '5'] {
+    flex-wrap: wrap;
+}
+
+.configurator-form .step-container[data-stage = '5'] label {
+    flex: 0 1 calc(100% / 4.2);
+    height: 5.2rem;
+}
+.configurator-form .step-container[data-stage = '5'] label p {
+    font-size: 1.67rem;
+}
+
+.configurator-form .step-container[data-stage = '6'] label {
+    height: 5.2rem;
+}
+
+.configurator-form .step-container[data-stage = '6'] label p {
+    font-size: 1.67rem;
+}
+
+.configurator-form button.next-step {
+    flex: 0 1 calc(100% / 4.2);
+    height: 5.2rem;
+    background-color: var(--color-main-text);
+    border-radius: var(--default-border-radius);
+    color: var(--color-third-main);
+    font-weight: 700;
+    font-size: 1.67rem;
+    transition: all .4s ease;
+}
+
+.configurator-form button.next-step:hover {
+    background-color: var(--color-main);
+}
+
+.configurator-form .step-container.active-step {
+    display: flex;
+}
+
+.configurator-form .hidden {
+    opacity: 0;
+}
+
+.configurator-form .step-container label input {
+    display: none;
+}
+
+.configurator-form .step-container label p {
     font-weight: 700;
     font-size: 2.67rem;
-    color: var(--color-main);
-    transition: all .4s;
 }
 
-.form-settings .cards-container .choice-card:hover {
-    border: 2px solid var(--color-main-text);
+.configurator-form .step-container label:hover {
+    background-color: var(--color-second-main);
 }
 
-.form-settings .cards-container .choice-card:hover p {
-    color: var(--color-main-text);
-}
-
-.form-settings .cards-container .choice-card:has(input:checked) {
-    border: 2px solid var(--color-main-text);
-}
-
-.form-settings .cards-container .choice-card:has(input:checked) p {
-    color: var(--color-main-text);
-}
-
-.choice-card input {
-    display: none;
-}
-
-.choice-card button {
-    font-weight: 500;
-    color: var(--color-third-text);
-    margin-bottom: calc(0.125 * var(--default-margin));
-    transition: all .4s;
-}
-
-.choice-card button:hover,
-.choice-card button:active {
-    color: var(--color-main-text);
-}
-
-.form-settings.difficulty-level p {
-    font-size: 2rem;
-}
-
-.form-settings.train-count button[type = 'button'],
-.form-settings.train-count p {
-    font-size: 10.4rem;
-    font-weight: 700;
-}
-
-.form-settings.train-count input {
-    display: none;
-}
-
-.form-settings.train-count label {
-    display: flex;
-    margin: 0 auto;
-    margin-bottom: var(--default-margin);
-    gap: calc(2.5 * var(--default-margin));
-}
-
-.form-settings.train-count p {
-    color: var(--color-main);
-    width: 6.75rem;
-    text-align: center;
-}
-
-.form-settings button[type = 'submit'] {
-    width: 14.5rem;
-    height: 4.3rem;
-    font-weight: 700;
-    font-size: 2rem;
-    border-radius: calc(1.6 * var(--default-border-radius));
-    border: 9px solid var(--color-main);
-    margin: 0 auto;
-    transition: all .4s;
-}
-
-.form-settings button[type = 'submit']:hover {
-    border: 9px solid var(--color-main-text);
+.configurator-form .step-container label:has(input:checked) {
+    background-color: var(--color-second-main); 
 }
