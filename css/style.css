@@ -256,6 +256,11 @@ main {
     height: 12.08rem;
 }
 
+.configurator-form .step-container[data-stage = '4'] button.next-step {
+    height: 12.08rem;
+    flex: 1;
+}
+
 .configurator-form .step-container[data-stage = '5'] {
     flex-wrap: wrap;
 }
@@ -279,16 +284,12 @@ main {
 .configurator-form button.next-step {
     flex: 0 1 calc(100% / 4.2);
     height: 5.2rem;
-    background-color: var(--color-main-text);
+    background-color: var(--color-main);
     border-radius: var(--default-border-radius);
     color: var(--color-third-main);
     font-weight: 700;
     font-size: 1.67rem;
     transition: all .4s ease;
-}
-
-.configurator-form button.next-step:hover {
-    background-color: var(--color-main);
 }
 
 .configurator-form .step-container.active-step {
