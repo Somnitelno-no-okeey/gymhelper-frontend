@@ -188,7 +188,7 @@ main {
     margin-top: calc(1.1 * var(--default-margin));
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 104px);
 }
 
 /* styles for main in configurator */
