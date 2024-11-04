@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gymhelper</title>
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -179,10 +181,19 @@
                         </label>
                     </div>
                 </form>
+                <div id="yandex_rtb_R-A-12701756-3"></div>
             </main>
         </div>
     </div>
     <script src="js/test.js"></script>
     <script src="js/configurator.js"></script>
+    <script>
+        window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+                "blockId": "R-A-12701756-3",
+                "renderTo": "yandex_rtb_R-A-12701756-3"
+            })
+        })
+    </script>
 </body>
 </html>
