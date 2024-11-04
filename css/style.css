@@ -124,7 +124,8 @@ aside nav ul li a:hover svg path.stroke {
 }
 
 aside .profile-nav-container {
-    margin-top: calc(6.9 * var(--default-margin));
+    margin-top: auto;
+    margin-bottom: calc(2 * var(--default-margin));
     display: flex;
     flex-direction: column;
     padding: 0.17rem;
