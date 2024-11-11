@@ -6,6 +6,7 @@ const stepButtonContainer = document.querySelector('.step-button-container');
 let stepButtons = stepButtonContainer.querySelectorAll('.step-btn');
 const stepContainers = document.querySelectorAll('.step-container');
 const nextStepButtons = document.querySelectorAll('.next-step');
+const containersWithNextButton = document.querySelectorAll('.have-further-btn');
 let titles = ['Где вы планируете тренироваться?','Какие тренировки вы предопчитаете?', 'Какой вид тренировок вы предпочитаете?', 'В какие дни вы планируете тренироваться?', 'Какие группы мышц вы планируете тренировать?' , 'Выберите сложность программы'];
 let availableStepContainers = [1, 2, 3, 4, 5, 6];
 
@@ -16,11 +17,27 @@ const delay = (ms) => {
 const initializeStepButtonListeners = () => {
     for (let stepButton of stepButtons) {
         stepButton.addEventListener('click', function() {
-            if (stepButton.dataset.btn != currentStep) {
+            if (stepButton.dataset.btn < currentStep) {
                 currentStep = stepButton.dataset.btn;
                 renderStep(currentStep);
             }
         });
+    }
+};
+
+const updateButtonState = () => {
+    for (let containerWithNextButton of containersWithNextButton) {
+        const inputs = containerWithNextButton.querySelectorAll('input');
+        const furtherButton = containerWithNextButton.querySelector('.next-step');
+    
+        if (furtherButton) {
+            inputs.forEach(input => {
+                input.addEventListener('change', () => {
+                    const isSelected = Array.from(inputs).some(inp => inp.checked);
+                    furtherButton.disabled = !isSelected;
+                });
+            });
+        }
     }
 };
 
@@ -98,3 +115,4 @@ const renderStepButtons = () => {
 
 initializeStepButtonListeners();
 initializeNextStepButtonListeners();
+updateButtonState();
