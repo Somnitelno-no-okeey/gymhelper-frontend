@@ -3,10 +3,12 @@
     --color-bg: #212121;
     --color-bg-aside: linear-gradient(360deg, #272E35 0%, #333E3B 100%);
     --color-bg-card: #373737;
+    --color-bg-days: #23202B;
     --color-main: #D0F45D;
     --color-second-main: #4A66E3;
     --color-third-main: #40474A;
     --color-main-text: #FFFFFF;
+    --color-day-text: #C2C5CA;
     --default-margin: 1.67rem;
     --default-border-radius: 1.04rem;
     --color-default-step-btn: linear-gradient(90deg, rgba(115, 115, 115, 0.1) 0%, rgba(208, 215, 209, 0.1) 100%);
@@ -61,9 +63,9 @@ body {
 .page-container {
     flex-grow: 1;
 }
+/* end styles for all body */
 
 /* styles for aside */
-
 aside {
     display: flex;
     flex-direction: column;
@@ -102,7 +104,7 @@ aside nav ul li a {
     height: 2.58rem;
     border-radius: 50%;
     background: var(--color-third-main);
-    transition: all .4s ease;
+    transition: all .3s ease;
 }
 
 aside nav ul li a.active,
@@ -141,7 +143,7 @@ aside .profile-nav-container a {
     width: 2.58rem;
     height: 2.58rem;
     border-radius: 50%;
-    transition: all .4s ease;
+    transition: all .3s ease;
 }
 
 aside .profile-nav-container .logout {
@@ -151,9 +153,9 @@ aside .profile-nav-container .logout {
 aside .profile-nav-container .nav-profile {
     background: var(--color-second-main);
 }
+/* end styles for aside */
 
 /* styles for header */
-
 header {
     display: flex;
     align-items: center;
@@ -175,9 +177,9 @@ header .premium {
     border-radius: var(--default-border-radius);
     box-shadow: 6px -19px 250px 42px var(--color-second-main);
 }
+/* end styles for header */
 
 /* styles for all main */
-
 .page-container {
     display: flex;
     justify-content: center;
@@ -190,14 +192,14 @@ main {
     flex-direction: column;
     height: calc(100% - 104px);
 }
+/* end styles for all main */
 
 /* styles for main in configurator */
-
 .configurator-form .step-title {
     font-size: 1.33rem;
     text-align: center;
     margin-bottom: calc(0.8 * var(--default-margin));
-    transition: all .4s ease;
+    transition: all .3s ease;
 }
 
 .configurator-form .step-button-container {
@@ -224,7 +226,7 @@ main {
     bottom: 0;
     background: var(--color-hover-step-btn);
     opacity: 0; 
-    transition: opacity 0.4s ease; 
+    transition: opacity 0.3s ease; 
     z-index: 0;
 }
 
@@ -241,7 +243,7 @@ main {
     justify-content: center;
     gap: calc(0.5 * var(--default-margin));
     opacity: 1;
-    transition: all .4s ease;
+    transition: all .3s ease;
 }
 
 .configurator-form .step-container label {
@@ -252,7 +254,7 @@ main {
     height: 7.5rem;
     border-radius: var(--default-border-radius);
     background-color: var(--color-bg-card);
-    transition: all .4s ease;
+    transition: all .3s ease;
     cursor: pointer;
 }
 
@@ -293,7 +295,12 @@ main {
     color: var(--color-third-main);
     font-weight: 700;
     font-size: 1.67rem;
-    transition: all .4s ease;
+    transition: all .3s ease;
+}
+
+.configurator-form button.next-step:disabled {
+    background-color: var(--color-bg-card);
+    opacity: 0.5;
 }
 
 .configurator-form .step-container.active-step {
@@ -329,4 +336,165 @@ main {
     margin-top: auto;          
     background-color: var(--color-main-text);               
     border-radius: var(--default-border-radius); 
-}    
+}
+/*end styles for main in configurator */
+
+/* styles for main in calendar */
+main.calendar-main {
+    flex-direction: row;
+    gap: calc(0.5 * var(--default-margin));
+    padding-bottom: calc(2 * var(--default-margin));
+}
+
+.calendar-main .container-column {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.5 * var(--default-margin));
+}
+
+.calendar-main .container-column-1 div {
+    width: 17.8rem;
+    background-color: var(--color-bg-card);
+    border-radius: calc(1.6 * var(--default-border-radius));
+}
+
+.calendar-main .container-column-1 .progress-bar,
+.calendar-main .container-column-1 .info-progress-bar {
+    flex: 1;
+    min-height: 5.125rem;
+}
+
+.calendar-main .container-column-1 .untitled-container {
+    flex: 5;
+}
+
+.calendar-main .container-column-2 .training-day-info {
+    width: 24.6rem;
+    min-height: 18.25rem;
+    background-color: var(--color-bg-card);
+    border-radius: calc(1.6 * var(--default-border-radius));
+}
+
+.calendar-main .container-column-3 .calendar {
+    width: 19.25rem;
+    height: 18.25rem;
+    background-color: var(--color-second-main);
+    border-radius: calc(1.6 * var(--default-border-radius));
+    padding: 1.25rem 1.45rem 1.45rem 1.45rem;
+}
+
+.calendar .calendar-title {
+    display: flex;
+    gap: calc(0.2 * var(--default-margin));
+    margin-left: calc(0.125 * var(--default-margin));
+    margin-bottom: calc(0.425 * var(--default-margin));
+}
+
+.calendar .calendar-title p {
+    font-weight: 500;
+}
+
+.calendar .calendar-title .buttons-container {
+    display: flex;
+    gap: calc(0.05 * var(--default-margin));
+}
+
+.calendar .calendar-title .buttons-container button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.calendar .calendar-title .buttons-container button:hover {
+    background-color: var(--color-main);
+}
+
+.calendar .calendar-title .buttons-container button:hover svg path {
+    stroke: var(--color-second-main);
+}
+
+.calendar .weeks {
+    display: flex;
+    list-style-type: none;
+    gap: calc(0.425 * var(--default-margin));
+    margin-bottom: calc(0.475 * var(--default-margin));
+}
+
+.calendar .weeks li {
+    font-weight: 500;
+    width: 1.625rem;
+    text-align: center;
+}
+
+.calendar .days {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: calc(0.175 * var(--default-margin));
+}
+
+.calendar .days li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.08rem;
+    height: 2.08rem;
+    border-radius: 50%;
+    background-color: var(--color-bg-days);
+    font-weight: 500;
+    font-size: 0.67rem;
+    color: var(--color-day-text);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.calendar .days li.current-day,
+.calendar .days li:hover {
+    background-color: var(--color-main);
+    color: var(--color-bg-days);
+}
+
+.calendar .days li.current-day.event::after,
+.calendar .days li.event:hover::after {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, 0.46rem);
+    width: 0.17rem; 
+    height: 0.17rem; 
+    background-color: var(--color-bg-days); 
+    border-radius: 50%; 
+}
+
+.calendar .days li.inactive:hover {
+    background: none;
+    background-color: var(--color-main);
+}
+
+.calendar .days li.event {
+    position: relative;
+}
+
+.calendar .days li.event::after {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, 0.46rem);
+    width: 0.17rem; 
+    height: 0.17rem; 
+    background-color: var(--color-main); 
+    border-radius: 50%;
+    transition: all .3s ease; 
+}
+
+.calendar .days li.inactive {
+    background: url('/img/inactive-background.svg');
+    color: var(--color-bg-days);
+}
+/*end styles for main in calendar */

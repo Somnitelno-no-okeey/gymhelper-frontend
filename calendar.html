@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gymhelper</title>
-    <script>window.yaContextCb=window.yaContextCb||[]</script>
-    <script src="https://yandex.ru/ads/system/context.js" async></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -18,14 +16,14 @@
             <nav>
                 <ul class="site-navigation">
                     <li>
-                        <a href="/index.html" class="active" title="Конфигуратор">
+                        <a href="/index.html" title="Конфигуратор">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.8125 24H11.0312V16.5H19.4688V24H23.6875V12.75L15.25 7.125L6.8125 12.75V24ZM4 26.5V11.5L15.25 4L26.5 11.5V26.5H16.6562V19H13.8438V26.5H4Z" fill="#C3CCCB"/>
                             </svg>
                         </a>
                     </li>
                     <li>
-                        <a href="/calendar.html" title="Календарь">
+                        <a href="/calendar.html" class="active" title="Календарь">
                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M24 25.5H6.5V11.75H24M20.25 3V5.5H10.25V3H7.75V5.5H6.5C5.1125 5.5 4 6.6125 4 8V25.5C4 26.163 4.26339 26.7989 4.73223 27.2678C5.20107 27.7366 5.83696 28 6.5 28H24C24.663 28 25.2989 27.7366 25.7678 27.2678C26.2366 26.7989 26.5 26.163 26.5 25.5V8C26.5 7.33696 26.2366 6.70107 25.7678 6.23223C25.2989 5.76339 24.663 5.5 24 5.5H22.75V3M21.5 16.75H15.25V23H21.5V16.75Z" fill="#C3CCCB"/>
                             </svg>
@@ -60,139 +58,88 @@
         </aside>
         <div class="main-container">
             <header>
-                <h1 class="page-name">Конфигуратор</h1>
+                <h1 class="page-name">Календарь</h1>
                 <button class="premium">Premium</button>
             </header>
-            <main>
-                <form action="" method="post" class="configurator-form">
-                    <h1 class="step-title">Где вы планируете тренироваться?</h1>
-                    <div class="step-button-container">
-                        <button class="step-btn active" type="button" data-btn="1"></button>
-                        <button class="step-btn" type="button" data-btn="2"></button>
+            <main class="calendar-main">
+                <div class="container-column container-column-1">
+                    <div class="progress-bar"></div>
+                    <div class="info-progress-bar"></div>
+                    <div class="untitled-container"></div>
+                </div>
+                <div class="container-column container-column-2">
+                    <div class="training-day-info">
+
                     </div>
-                    <div class="step-container active-step" data-stage="1">
-                        <label class="choice-card">
-                            <input type="radio" name="train-place" value="home" class="next-step">
-                            <p>ДОМА</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="radio" name="train-place" value="gym" class="next-step">
-                            <p>В ЗАЛЕ</p>
-                        </label>
+                </div>
+                <div class="container-column container-column-3">
+                    <div class="calendar">
+                        <div class="calendar-title">
+                            <p class="month">Ноябрь</p>
+                            <div class="buttons-container">
+                                <button class="prev">
+                                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7 1L1 6.5L7 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                <button class="next">
+                                    <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L7 6.5L1 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <ul class="weeks">
+                            <li>пн</li>
+                            <li>ср</li>
+                            <li>вт</li>
+                            <li>чт</li>
+                            <li>пт</li>
+                            <li>сб</li>
+                            <li>вс</li>
+                          </ul>
+                          <ul class="days">
+                            <li class="inactive">28</li>
+                            <li class="inactive">29</li>
+                            <li class="inactive">30</li>
+                            <li class="inactive">31</li>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li class="current-day event">10</li>
+                            <li class="event">11</li>
+                            <li>12</li>
+                            <li>13</li>
+                            <li class="event">14</li>
+                            <li>15</li>
+                            <li>16</li>
+                            <li>17</li>
+                            <li>18</li>
+                            <li class="event">19</li>
+                            <li>20</li>
+                            <li>21</li>
+                            <li>22</li>
+                            <li>23</li>
+                            <li>24</li>
+                            <li>25</li>
+                            <li>26</li>
+                            <li>27</li>
+                            <li>28</li>
+                            <li>29</li>
+                            <li>30</li>
+                            <li>31</li>
+                          </ul>
                     </div>
-                    <div class="step-container hidden" data-stage="2">
-                        <label class="choice-card">
-                            <input type="radio" name="train-type" value="power" class="next-step">
-                            <p>СИЛОВЫЕ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="radio" name="train-type" value="cardio" class="next-step">
-                            <p>КАРДИО</p>
-                        </label>
-                    </div>
-                    <div class="step-container hidden" data-stage="3">
-                        <label class="choice-card">
-                            <input type="radio" name="train-program" value="full-body" class="next-step">
-                            <p>FULL-BODY</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="radio" name="train-program" value="split" class="next-step">
-                            <p>SPLIT</p>
-                        </label>
-                    </div>
-                    <div class="step-container hidden have-further-btn" data-stage="4">
-                        <label class="choice-card">
-                            <input type="checkbox" name="day-week" value="monday">
-                            <p>ПН</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="day-week" value="tuesday">
-                            <p>ВТ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="day-week" value="wednesday">
-                            <p>СР</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="day-week" value="thursday">
-                            <p>ЧТ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="day-week" value="friday">
-                            <p>ПТ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="day-week" value="saturday">
-                            <p>СБ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="day-week" value="sunday">
-                            <p>ВС</p>
-                        </label>
-                        <button type="button" class="next-step" disabled>
-                            <svg width="46" height="78" viewBox="0 0 46 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.04293 2.05213C1.39533 2.69841 0.881546 3.46605 0.530994 4.31114C0.180442 5.15622 0 6.06214 0 6.97705C0 7.89195 0.180442 8.79787 0.530994 9.64296C0.881546 10.488 1.39533 11.2557 2.04293 11.902L29.1474 39.0065L2.04293 66.1109C0.736757 67.4171 0.00295796 69.1887 0.00295796 71.0359C0.00295796 72.8831 0.736757 74.6546 2.04293 75.9608C3.34909 77.2669 5.12064 78.0007 6.96784 78.0007C8.81504 78.0007 10.5866 77.2669 11.8928 75.9608L43.9571 43.8964C44.6047 43.2502 45.1185 42.4825 45.469 41.6374C45.8196 40.7924 46 39.8864 46 38.9715C46 38.0566 45.8196 37.1507 45.469 36.3056C45.1185 35.4605 44.6047 34.6929 43.9571 34.0466L11.8928 1.98227C9.23819 -0.672289 4.76735 -0.672287 2.04293 2.05213Z" fill="#40474A"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="step-container hidden have-further-btn" data-stage="5">
-                        <label class="choice-card">
-                            <input type="checkbox" name="muscle-groups" value="biceps">
-                            <p>БИЦЕПС</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="muscle-groups" value="triceps">
-                            <p>ТРИЦЕПС</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="muscle-groups" value="chest">
-                            <p>ГРУДЬ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="muscle-groups" value="back">
-                            <p>СПИНА</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="muscle-groups" value="legs">
-                            <p>НОГИ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="muscle-groups" value="shoulders">
-                            <p>ПЛЕЧИ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="checkbox" name="muscle-groups" value="body">
-                            <p>КОРПУС</p>
-                        </label>
-                        <button type="button" class="next-step" disabled>ДАЛЕЕ</button>
-                    </div>
-                    <div class="step-container hidden" data-stage="6">
-                        <label class="choice-card">
-                            <input type="radio" name="difficulty" value="lite">
-                            <p>НИЗКАЯ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="radio" name="difficulty" value="medium">
-                            <p>СРЕДНЯЯ</p>
-                        </label>
-                        <label class="choice-card">
-                            <input type="radio" name="difficulty" value="hard">
-                            <p>ВЫСОКАЯ</p>
-                        </label>
-                    </div>
-                </form>
-                <div id="yandex_rtb_R-A-12701756-3"></div>
+                </div>
             </main>
         </div>
     </div>
-    <script src="js/configurator.js"></script>
-    <script>
-        window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-                "blockId": "R-A-12701756-3",
-                "renderTo": "yandex_rtb_R-A-12701756-3"
-            })
-        })
-    </script>
+    <script src="js/calendar.js"></script>
 </body>
 </html>
