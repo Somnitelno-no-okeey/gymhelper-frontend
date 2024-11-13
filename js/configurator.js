@@ -41,6 +41,21 @@ const updateButtonState = () => {
     }
 };
 
+const updateSubmitButton = () => {
+    const submitButtonContainer = document.querySelector('.step-container[data-stage="6"]')
+    const submitButton = submitButtonContainer.querySelector('.submit-btn');
+    const inputs = submitButtonContainer.querySelectorAll('input');
+
+    if (submitButton) {
+        inputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const isSelected = Array.from(inputs).some(inp => inp.checked);
+                submitButton.disabled = !isSelected;
+            });
+        });
+    }
+};
+
 const initializeNextStepButtonListeners = () => {
     for (let nextStepButton of nextStepButtons) {
         nextStepButton.addEventListener('click', function() {
@@ -116,3 +131,4 @@ const renderStepButtons = () => {
 initializeStepButtonListeners();
 initializeNextStepButtonListeners();
 updateButtonState();
+updateSubmitButton();

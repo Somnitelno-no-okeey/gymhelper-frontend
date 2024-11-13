@@ -328,6 +328,22 @@ main {
     background-color: var(--color-second-main); 
 }
 
+.configurator-form .submit-btn {
+    flex: 1;
+    height: 5.2rem;
+    background-color: var(--color-main);
+    border-radius: var(--default-border-radius);
+    color: var(--color-third-main);
+    font-weight: 700;
+    font-size: 1.67rem;
+    transition: all .3s ease;
+}
+
+.configurator-form .submit-btn:disabled {
+    background-color: var(--color-bg-card);
+    opacity: 0.5;
+}
+
 #yandex_rtb_R-A-12701756-3 {
     width: 20rem;            
     height: 7rem;
