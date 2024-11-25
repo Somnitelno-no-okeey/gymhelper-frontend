@@ -69,6 +69,7 @@ body {
 aside {
     display: flex;
     flex-direction: column;
+    height: 97vh;
     margin-right: calc(3 * var(--default-margin));
 }
 
@@ -350,8 +351,6 @@ main {
     margin: 0 auto;
     margin-bottom: calc(2 * var(--default-margin)); 
     margin-top: auto;          
-    background-color: var(--color-main-text);               
-    border-radius: var(--default-border-radius); 
 }
 /*end styles for main in configurator */
 
@@ -393,7 +392,7 @@ main.calendar-main {
 
 .calendar-main .container-column-3 .calendar {
     width: 19.25rem;
-    height: 18.25rem;
+    min-height: 18.25rem;
     background-color: var(--color-second-main);
     border-radius: calc(1.6 * var(--default-border-radius));
     padding: 1.25rem 1.45rem 1.45rem 1.45rem;
@@ -437,6 +436,7 @@ main.calendar-main {
     display: flex;
     list-style-type: none;
     gap: calc(0.425 * var(--default-margin));
+    margin-left: calc(0.2125 * var(--default-margin));
     margin-bottom: calc(0.475 * var(--default-margin));
 }
 
@@ -488,8 +488,8 @@ main.calendar-main {
 }
 
 .calendar .days li.inactive:hover {
-    background: none;
     background-color: var(--color-main);
+    color: var(--color-bg-days);
 }
 
 .calendar .days li.event {
@@ -510,7 +510,8 @@ main.calendar-main {
 }
 
 .calendar .days li.inactive {
-    background: url('/img/inactive-background.svg');
-    color: var(--color-bg-days);
+    background: rgba(35, 32, 43, 0.5);
+    color: var(--color-day-text);
+
 }
 /*end styles for main in calendar */
