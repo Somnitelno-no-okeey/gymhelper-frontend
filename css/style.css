@@ -3,7 +3,10 @@
     --color-bg: #212121;
     --color-bg-aside: linear-gradient(360deg, #272E35 0%, #333E3B 100%);
     --color-bg-card: #373737;
+    --color-bg-card-calendar: rgba(217, 217, 217, 0.1);
+    --color-bg-day-week: #212123;
     --color-bg-days: #23202B;
+    --color-bg-bar: #4A4A4A;
     --color-main: #D0F45D;
     --color-second-main: #4A66E3;
     --color-third-main: #40474A;
@@ -95,6 +98,12 @@ aside nav ul {
     border-radius: calc(1.6 * var(--default-border-radius));
     gap: calc(1.2 * var(--default-margin));
     box-shadow: 0px -303px 250px -7px var(--color-main);
+
+}
+
+aside.calendar-aside nav ul {
+    box-shadow: 0px -303px 250px -7px var(--color-main),
+                272px -78px 250px -25px var(--color-main);
 }
 
 aside nav ul li a {
@@ -367,27 +376,153 @@ main.calendar-main {
     gap: calc(0.5 * var(--default-margin));
 }
 
-.calendar-main .container-column-1 div {
-    width: 17.8rem;
-    background-color: var(--color-bg-card);
-    border-radius: calc(1.6 * var(--default-border-radius));
-}
-
 .calendar-main .container-column-1 .progress-bar,
 .calendar-main .container-column-1 .info-progress-bar {
-    flex: 1;
-    min-height: 5.125rem;
+    width: 17.8rem;
+    background-color: var(--color-bg-card-calendar);
+    border-radius: calc(1.6 * var(--default-border-radius));
+    backdrop-filter: blur(70px);
 }
 
-.calendar-main .container-column-1 .untitled-container {
-    flex: 5;
+.calendar-main .container-column-1 .progress-bar {
+    height: 3.58rem;
+    padding: 0.75rem 1rem;
+}
+
+.progress-bar .progress-form {
+    display: flex;
+}
+
+.progress-bar .progress-form input {
+    display: none;
+}
+
+.progress-bar .progress-form .day-week {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.08rem;
+    height: 2.08rem;
+    border-radius: 50%;
+    background-color: var(--color-bg-day-week);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.progress-bar .progress-form .day-week:has(input:checked) {
+    background-color: var(--color-main);
+}
+
+.progress-bar .progress-form .day-week:has(input:checked) p {
+    color: var(--color-bg-day-week);
+}
+
+.progress-form .days-weeek {
+    display: flex;
+    gap: 7px;
+}
+
+.progress-form .day-week p {
+    font-weight: 500;
+    font-size: 0.67rem;
+    color: var(--color-day-text);
+}
+
+.progress-bar .progress-form .submit-progress {
+    margin-left: auto;
+    width: 3.92rem;
+    height: 2.08rem;
+    background-color: var(--color-bg-day-week);
+    border-radius: var(--default-border-radius);
+    font-weight: 500;
+    font-size: 0.67rem;
+    color: var(--color-day-text);
+    transition: all .3s ease;
+}
+
+.progress-bar .progress-form .submit-progress:hover {
+    background-color: var(--color-main);
+    color: var(--color-bg-day-week);
+}
+
+.calendar-main .container-column-1 .info-progress-bar {
+    height: 4.33rem;
+    padding: 0 1rem 0 1rem;
+}
+
+.info-progress-bar .title {
+    margin-top: calc(0.75 * var(--default-margin));
+    margin-bottom: calc(0.75 * var(--default-margin));
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-progress-bar .title p, 
+.info-progress-bar .title span {
+    font-weight: 500;
+    font-size: 0.625rem;
+    color: var(--color-day-text);
+}
+
+.info-progress-bar .title .progress-info {
+    font-weight: 400;
+}
+
+.info-progress-bar .bar {
+    width: 100%;
+    height: 0.17rem;
+    background-color: var(--color-bg-bar);
+    border-radius: var(--default-border-radius);
+}
+
+.info-progress-bar .bar .filled-bar {
+    height: 0.17rem;
+    background-color: var(--color-main);
+    border-radius: var(--default-border-radius);
 }
 
 .calendar-main .container-column-2 .training-day-info {
     width: 24.6rem;
     min-height: 18.25rem;
-    background-color: var(--color-bg-card);
+    background-color: var(--color-bg-card-calendar);
+    backdrop-filter: blur(70px);
     border-radius: calc(1.6 * var(--default-border-radius));
+    padding: 1.25rem 1.46rem;
+}
+
+.training-day-info .day-week {
+    font-weight: 500;
+    margin-bottom: 26px;
+}
+
+.training-day-info .exercises {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.375 * var(--default-margin));
+}
+
+.training-day-info .exercises .exercise {
+    display: flex;
+    flex-direction: column;
+    gap: calc(0.4 * var(--default-margin));
+    width: 100%;
+    height: 3rem;
+    background-color: var(--color-bg-day-week);
+    border-radius: calc(0.4 * var(--default-border-radius));
+    padding: 0.5rem 0.83rem;
+}
+
+.exercise .exercise-name {
+    font-weight: 600;
+    font-size: 0.67rem;
+    line-height: 1;
+    color: var(--color-day-text);
+}
+
+.exercise .exercise-repeat {
+    font-size: 0.67rem;
+    line-height: 1;
+    color: var(--color-day-text);
 }
 
 .calendar-main .container-column-3 .calendar {
@@ -468,6 +603,11 @@ main.calendar-main {
     transition: all .3s ease;
 }
 
+/* .calendar .days li.active {
+
+} */
+
+
 .calendar .days li.current-day,
 .calendar .days li:hover {
     background-color: var(--color-main);
@@ -514,4 +654,5 @@ main.calendar-main {
     color: var(--color-day-text);
 
 }
+
 /*end styles for main in calendar */

@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="page-container">
-        <aside>
+        <aside class="calendar-aside">
             <a href="" class="logo">GH</a>
             <nav>
                 <ul class="site-navigation">
@@ -63,13 +63,35 @@
             </header>
             <main class="calendar-main">
                 <div class="container-column container-column-1">
-                    <div class="progress-bar"></div>
-                    <div class="info-progress-bar"></div>
-                    <div class="untitled-container"></div>
+                    <div class="info-progress-bar">
+                        <div class="title">
+                            <p class="progress">Ваш прогресс</p>
+                            <p class="progress-info"><span class="progress-count"></span>% Выполнено</p>
+                        </div>
+                        <div class="bar">
+                            <div class="filled-bar"></div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <form action="" method="post" class="progress-form">
+                            <div class="days-weeek">
+                                <label class="day-week" style="display: none;">
+                                    <input type="checkbox" name="day-week">
+                                    <p></p>
+                            </div>
+                            <button type="submit" class="submit-progress">готово</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="container-column container-column-2">
                     <div class="training-day-info">
-
+                        <h2 class="day-week"></h2>
+                        <div class="exercises">
+                            <div class="exercise" style="display: none;">
+                                <h3 class="exercise-name"></h3>
+                                <p class="exercise-repeat"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="container-column container-column-3">
