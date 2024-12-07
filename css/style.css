@@ -409,6 +409,14 @@ main.calendar-main {
     transition: all .3s ease;
 }
 
+.progress-bar .progress-form .day-week:hover {
+    background-color: var(--color-main); 
+}
+
+.progress-bar .progress-form .day-week:hover p {
+    color: var(--color-bg-day-week); 
+}
+
 .progress-bar .progress-form .day-week:has(input:checked) {
     background-color: var(--color-main);
 }

@@ -3,7 +3,6 @@ const currentDate = document.querySelector(".current-month");
 const prevNextIcon = document.querySelectorAll(".buttons-container button");
 const daysWeekContainer = document.querySelector('.days-weeek');
 const dayWeekTemplate = daysWeekContainer.querySelector('.day-week');
-dayWeekTemplate.style.display = 'flex';
 
 let date = new Date(),
 currYear = date.getFullYear(),
@@ -311,6 +310,9 @@ const generateCurrentWeekData = () => {
 
 const filterData = () => {
     const currentWeekData = generateCurrentWeekData();
+    if (!currentWeekData) {
+        return currentWeekData;
+    }
     const filteredData = currentWeekData.filter((dayData) =>
         !completedDays.some((completedDay) => completedDay.month === dayData.month && completedDay.day === dayData.day)
       );
@@ -360,6 +362,7 @@ const onFormSubmit = (daysData) => {
 
 const renderProgressButtons = (filteredData) => {
     daysWeekContainer.innerHTML = '';
+    dayWeekTemplate.style.display = 'flex';
 
     filteredData.forEach((dayData) => {
         const dayWeekContainer = dayWeekTemplate.cloneNode(true);
@@ -387,9 +390,10 @@ const renderProgress = () => {
 
     if (filteredData) {
         renderProgressButtons(filteredData);
-        fillProgressBar();
         onFormSubmit(filteredData);
     }
+
+    fillProgressBar();
 };
 
 renderProgress();
