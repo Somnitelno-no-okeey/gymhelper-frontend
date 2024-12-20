@@ -7,7 +7,7 @@ let stepButtons = stepButtonContainer.querySelectorAll('.step-btn');
 const stepContainers = document.querySelectorAll('.step-container');
 const nextStepButtons = document.querySelectorAll('.next-step');
 const containersWithNextButton = document.querySelectorAll('.have-further-btn');
-let titles = ['Где вы планируете тренироваться?','Какие тренировки вы предопчитаете?', 'Какой вид тренировок вы предпочитаете?', 'В какие дни вы планируете тренироваться?', 'Какие группы мышц вы планируете тренировать?' , 'Выберите сложность программы'];
+let titles = ['Где вы планируете тренироваться?','Какие тренировки вы предопчитаете?', 'Какой вид тренировок вы предпочитаете?', 'В какие дни вы планируете тренироваться?', 'Какие группы планируете тренировать?' , 'Выберите сложность программы'];
 let availableStepContainers = [1, 2, 3, 4, 5, 6];
 
 const delay = (ms) => {
