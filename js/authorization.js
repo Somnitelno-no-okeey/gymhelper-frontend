@@ -47,11 +47,13 @@ function switchContent() {
 
 button.addEventListener('click', (evt) => {
     const buttonContent = evt.target.closest('.authorization-button');
-    if (buttonContent) {
+    if (buttonContent && window.innerWidth >= 930) {
         if (buttonContent.querySelector('span').dataset.stage == 'enter') {
             tl.play();
         } else {
             tl.reverse();
         }
-   } 
+    } else {
+        switchContent();
+    }
 });
