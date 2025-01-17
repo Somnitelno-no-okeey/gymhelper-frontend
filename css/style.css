@@ -1310,6 +1310,7 @@ main.authorization .wrapper {
 .welcome-wrapper {
     background-color: var(--color-second-main);
     border-radius: calc(2 * var(--default-border-radius));
+    left: 50%;
     width: 50%;
     height: 100%;
     display: flex;
@@ -1367,7 +1368,7 @@ main.authorization .wrapper {
     width: 50%;
     height: 100%;
     position: relative;
-    left: 50%;
+    left: 0;
 }
 
 .authorization-wrapper .authorization-container {

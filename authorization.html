@@ -17,10 +17,10 @@
                 <div class="welcome-container">
                     <h1 class="welcome">Здравствуйте!</h1>
                     <p class="text" data-stage="enter">
-                        Пожалуйста, войдите в систему, указав свои персональные данные
+                        Введите свои персональные данные и начните тренироваться с нами
                     </p>
                     <button class="authorization-button">
-                        <span class="button-content" data-stage="enter">Войти</span>
+                        <span class="button-content" data-stage="enter">Зарегистрироваться</span>
                     </button>
                 </div>
             </div>
@@ -29,13 +29,13 @@
                     <h1 class="logo">GYMHELPER</h1>
                         <p class="description">Тренируйся умнее, а не усерднее – с нашим 
                             интеллектуальным помощником!</p>
-                    <form action="" method="post" class="registration-form active" autocomplete="off">
+                    <form action="" method="post" class="registration-form hidden" autocomplete="off">
                         <input type="text" name="name" class="authorization-field" placeholder="Имя" required>
                         <input type="email" name="email" class="authorization-field" placeholder="Почта" required>
                         <input type="password" name="password" class="authorization-field" placeholder="Пароль" required>
                         <button type="submit" class="registration-button">Зарегистрироваться</button>
                     </form>
-                    <form action="" method="post" class="login-form hidden" autocomplete="off">
+                    <form action="" method="post" class="login-form active" autocomplete="off">
                         <input type="email" name="email" class="authorization-field" placeholder="Почта" required>
                         <input type="password" name="password" class="authorization-field" placeholder="Пароль" required>
                         <button type="submit" class="enter-button">Войти</button>
