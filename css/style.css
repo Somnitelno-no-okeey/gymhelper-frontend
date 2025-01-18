@@ -1509,6 +1509,7 @@ main.authorization .wrapper {
         position: relative;
         order: 5;
         width: 100%;
+        left: 0;
     }
 
     .welcome-container h1 {
